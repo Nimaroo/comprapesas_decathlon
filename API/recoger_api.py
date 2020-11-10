@@ -2,6 +2,8 @@ import requests
 import time
 from datetime import datetime
 from win10toast import ToastNotifier
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
+requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 GLOBVARS = {
     'USERNAME': '',
