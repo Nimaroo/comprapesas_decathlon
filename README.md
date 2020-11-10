@@ -1,5 +1,6 @@
 # comprapesas_decathlon
 COMPRAR.PY: Intenta comprar las pesas de 5Kg (se puede cambiar el peso) de Decathlon cada 5 minutos (se puede cambiar el tiempo) porque vuelan, amigos, VUELAN. No te puedes fiar de los avisos por mail
+
 RECOGER.PY: Este script checkea si están las pesas disponibles en algunas tiendas cercanas (10 por defecto) a un códgio postal que introduzcas (hardcodeado a 08207, Sabadell). Si encuentra, te avisa por consola de la tienda y la cantidad.
 
 Librerías que necesitas:
