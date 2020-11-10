@@ -113,6 +113,7 @@ def check_disponible(driver):
 
 
 def buscar_pesas(driver, peso=5):
+    tiempo = 2
     # Barra de búsqueda
     buscar = get_selenium_element(driver, '//*[@id="search-autocomplete"]')
     buscar.send_keys('Disco de fundición')
@@ -134,7 +135,7 @@ def buscar_pesas(driver, peso=5):
         print("Fecha y hora: " + now )
         print("Intento número: " + str(intentos))
         print("---------------------------------------\n")
-        # Añadimos a la cesta la pesa deseada
+        # Buscamos la disponibilidad
         resul = seleccionar_producto(driver, peso)
         if resul != 0:
             return resul
@@ -143,13 +144,12 @@ def buscar_pesas(driver, peso=5):
         if bool(disp):
             break
         intentos += 1
-        time.sleep(5 * 60)
+        time.sleep(tiempo * 60)
         driver.refresh()
 
     # Si pasa esto asumo que es porque SÍ estan disponibles!
     toast.show_toast("Hemos encontrado las pesas deseadas! Echa un vistazo a la consola!")
     print(str(disp))
-    print("FIN!")
     return 0
 
 
@@ -166,10 +166,7 @@ def main():
     if resul != 0:
         print('Ha habido algún problema buscando las pesas!')
     else:
-        print('Pesas añadidad sin problema a la cesta!')
-
-    # Función comprar!
-
+        print('FIN')
     # Fin
     driver.quit()
 
