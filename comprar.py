@@ -149,7 +149,8 @@ def buscar_pesas(driver, peso=5):
 
 def main():
     # Usamos chromedriver y entramos en carrefour
-    driver = webdriver.Chrome('E:\\GitRepos\\decathlon\\chromedriver.exe')
+    chrome_path = '\\'.join(os.path.realpath(__file__).split('\\')[:-1]) + '\\chromedriver.exe'
+    driver = webdriver.Chrome(chrome_path)
     driver.get('https://www.decathlon.es/es/')
 
     # Logeamos
